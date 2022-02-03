@@ -33,9 +33,12 @@ span {
 }
 
 .div-wrapper{
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 14%;
+  /* margin-right: 11%; */
 }
 #amount_invested {
   padding-left: 15px;
+}
+#interest{
+  width: 100px;
 }
