@@ -14,7 +14,7 @@ function compute() {
     amount_val.focus();
     return false;
   }
-  else if(interest_rate.value==NaN){
+  else if(interest_rate.value==""){
     alert("Please enter the interest rate");
     interest_rate.focus();
     return false;
