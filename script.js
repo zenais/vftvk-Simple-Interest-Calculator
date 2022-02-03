@@ -14,6 +14,11 @@ function compute() {
     amount_val.focus();
     return false;
   }
+  else if(amount_val.value<=0){
+    alert("Plase enter positive number");
+    amount_val.focus();
+    return false;
+  }
   else if(interest_rate.value==""){
     alert("Please enter the interest rate");
     interest_rate.focus();
@@ -36,4 +41,9 @@ function compute() {
     return true;
   }
 
+}
+
+function updateRate(){
+  var intrate=document.getElementById("interest").value;
+  document.getElementById("rate").innerHTML=intrate;
 }
