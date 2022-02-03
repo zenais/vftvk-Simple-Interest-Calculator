@@ -1,16 +1,56 @@
 <html>
-    <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator by Zinaida</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+<head>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-        <button onclick="compute()">Compute</button>
-    </body>
+<body>
+  <form class="" action="index.html" method="post" oninput="interestval.value = interest.value">
+    <h1>Simple Interest Calculator</h1>
+    <div class="div-wrapper">
+      <table cellspacing=10>
+        <tr>
+          <td>Amount</td>
+          <td><input type="number" id="amount"></td>
+        </tr>
+        <tr>
+          <td>Interest Rate</td>
+          <td>
+            <input type="range" name="interest" min="0" max="10" step="0.1" id="interest">
+            <output name="interestval"></output>%
+          </td>
+
+        </tr>
+
+        <tr>
+          <td>No. of Years</td>
+          <td>
+            <select name="years" id="years">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" onclick="compute()" id="comute_interest">Compute Interest</button>
+          </td>
+        </tr>
+      </table>
+      <p id="amount_invested"></p>
+    </div>
+
+    <p>&copy Everyone Can Get Rich</p>
+  </form>
+
+</body>
+
 </html>
