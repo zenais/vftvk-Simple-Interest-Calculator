@@ -29,7 +29,7 @@ function compute() {
       If you deposit
       <span>${amount_val.value}</span>,<br>
       at an interest rate of <span>${intreset_amount}</span>.<br>
-      You will receive an amount of <span>${final_amount}</span>,<br>
+      You will receive an amount of <span>${final_amount.toFixed(2)}</span>,<br>
       in the year <span>${this_year+parseInt(num_years.value)}</span><br>
       `
 
