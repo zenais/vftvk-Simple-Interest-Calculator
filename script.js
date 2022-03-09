@@ -1,49 +1,42 @@
-function compute() {
-  // read nodes by id of amount interest rate and no. of years
-  let amount_val = document.getElementById("amount");
-  let interest_rate = document.getElementById("interest");
-  let num_years = document.getElementById("years");
 
-  // assign local date to date_today and extrapolate year in 4 digits
-  let date_today = new Date();
-  let this_year = date_today.getFullYear();
 
-  // chack if fields are empty, if not send alert message
-  if (amount_val.value == "") {
-    alert("Plase enter the amount to invest");
-    amount_val.focus();
-    return false;
-  }
-  else if(amount_val.value<=0){
-    alert("Plase enter positive number");
-    amount_val.focus();
-    return false;
-  }
-  else if(interest_rate.value==""){
-    alert("Please enter the interest rate");
-    interest_rate.focus();
-    return false;
-  }
-  else {
-    a_invested = document.getElementById("amount_invested");
-    let final_amount= parseInt(amount_val.value);
-    let intreset_amount = parseFloat(interest_rate.value);
-    final_amount=(intreset_amount*parseInt(num_years.value)/100)*final_amount;
 
-    a_invested.innerHTML=`
-      If you deposit
-      <span>${amount_val.value}</span>,<br>
-      at an interest rate of <span>${intreset_amount}</span>.<br>
-      You will receive an amount of <span>${final_amount.toFixed(2)}</span>,<br>
-      in the year <span>${this_year+parseInt(num_years.value)}</span><br>
-      `
-
-    return true;
-  }
-
+function updateRate()
+{
+    var rateval = document.getElementById("rate").value;
+    document.getElementById("rate_val").innerText=rateval+"%";
 }
 
-function updateRate(){
-  var intrate=document.getElementById("interest").value;
-  document.getElementById("rate").innerHTML=intrate;
+function compute() {
+
+  var principal = document.getElementById("principal").value;
+  var rate = document.getElementById("rate").value;
+  var years = parseInt(document.getElementById("years").value);
+  var interest = principal * years * rate /100;
+  var year = new Date().getFullYear()+years;
+  var result = document.getElementById("result");
+
+
+  // chack if fields are empty, if not send alert message
+  if (principal == "") {
+    alert("Plase enter the amount to invest");
+    document.getElementById("principal").focus();
+    return false;
+  }
+  else if(principal<=0){
+    alert("Plase enter positive number");
+    document.getElementById("principal").focus();
+    return false;
+  }
+
+  result.innerHTML=`
+    If you deposit <span class="highlighted">${principal}</span>,<br>
+    at an interest rate of <span class="highlighted">${rate}%</span>.<br>
+    You will receive an amount of <span class="highlighted">${interest.toFixed(2)}</span>,<br>
+    in the year <span class="highlighted">${year}</span><br>
+    `
+
+  return true;
+
+
 }

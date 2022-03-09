@@ -1,13 +1,17 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color:black;}
+  background-color:black;
+  color:white;
+  }
+
 button {
   background-color: white;
   border-style: solid;
   border-width:thin;
   border-color: black;
 }
+
 button:hover{
   background-color: lightgray;
 }
@@ -15,30 +19,36 @@ h1 {
   color: gray;
   text-align: center;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 35px;
   font-family: Tahoma, Verdana, sans-serif;
 }
-form {
+
+table{
+  margin-left: 10%;
+}
+
+.maindiv{
   background-color: white;
-  padding: 0;
-
-  margin: auto;
-  max-width: 500px;
   border-radius: 20px;
+  color: black;
+  /* for better likeness and flexibility
+  with :300px changed to max-width:500px,
+  it is not a mistake just a better option */
+  max-width: 500px;
   padding: 20px;
+  /* align property deprecated  */
+  /* margin: auto property centers the
+  calculator in the middle of page */
+  margin: auto;
+}
+.result{
+  margin-left: 13%;
+}
+.highlighted{
+  background: yellow;
 }
 
-span {
-  background-color: yellow;
-}
-
-.div-wrapper{
-  margin-left: 14%;
-  /* margin-right: 11%; */
-}
-#amount_invested {
-  padding-left: 15px;
-}
-#interest{
-  width: 100px;
+footer{
+  /* text-align aligns text in center */
+  text-align: center;
 }
